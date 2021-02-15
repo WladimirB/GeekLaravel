@@ -1,4 +1,4 @@
-<footer role="contentinfo" class="py-6 lh-1 bg-white mt-5 pt-3 border-top">
+<footer class="py-6 lh-1 bg-white pt-3 border-top fixed-bottom mb-3">
     <div class="container">
       <div class="row">
         <div class="col-md-2">

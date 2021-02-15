@@ -12,8 +12,12 @@
             <a class="nav-link" href="/">Overview</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link" href="/main" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Main
+            </a>
+          <li class="nav-item ">
+            <a class="nav-link" href="/news" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              News
             </a>
           </li>
           <li>
