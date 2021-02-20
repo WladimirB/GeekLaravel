@@ -1,7 +1,7 @@
 <header class="bg-dark">
 <nav class="navbar navbar-lg navbar-expand-lg navbar-transparant navbar-dark navbar-absolute w-100">
     <div class="container">
-      <a class="navbar-brand" href="index.html">MyLaravelSite</a>
+      <a class="navbar-brand" href="/">MyLaravelSite</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,6 +24,11 @@
             <a class="nav-link" href="/about" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               About
             </a>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{route('login-form')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Login
+            </a>
+          </li>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="/contacts" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

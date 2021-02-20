@@ -26,7 +26,4 @@ class CategoryController extends Controller
         'category'=> $category]);
     }
 
-    public function add(){
-      return view('add_news');
-    }
 }

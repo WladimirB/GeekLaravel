@@ -5,7 +5,9 @@ Contacts
 @endsection
 
 @section('content')
-<form action="">
+<h2 class="text-primary text-center">Обратная связь</h2>
+<form action="/contacts/submit" method="post">
+  @csrf
   <div class="form-group">
     <label for="login">Login</label>
     <input type="text"  id="login" class="form-control">
@@ -18,6 +20,6 @@ Contacts
     <label for="message">message</label>
     <textarea type="text" class="form-control"></textarea>
   </div>
-  <button type="submit" class="btn btn-primary">отправить</button>
+  <button type="submit" name="submit" class="btn btn-primary">отправить</button>
 </form>
 @endsection

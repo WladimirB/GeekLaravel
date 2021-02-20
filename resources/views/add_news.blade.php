@@ -6,7 +6,9 @@
 
 @section('content')
 <h2 class="text-primary text-center">Добавить новость</h2>
-<form action="/publish" method="post" enctype="application/x-www-form-urlencoded">
+<form action="{{ route('publish-form') }}" method="post"
+enctype="application/x-www-form-urlencoded">
+  @csrf
   <div class="form-group">
     <label for="email">Адрес почты</label>
     <input class="form-control" type="email" name="email" id="email">
@@ -24,7 +26,7 @@
     <textarea id="article_text" rows="5" name="article_text"
     class="form-control" placeholder="Текст статьи"></textarea>
   </div>
-    <input type="submit" name="submit" class="btn btn-primary">
+    <button type="submit" name="submit" class="btn btn-primary">Опубликовать</button>
 </form>
 
 @endsection
