@@ -16,7 +16,7 @@
       <a class="text-success h3" href="{{route('add')}}">Добавить новость</a>
     </li>
     <li class="list-group-item bg-dark text-center border border-0">
-      <a class="text-warning" href="/news">Назад</a>
+      <a class="text-warning" href="{{route('news')}}">Назад</a>
     </li>
   </ul>
 @endsection

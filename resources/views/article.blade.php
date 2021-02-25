@@ -14,5 +14,5 @@
       Sed nec dui rutrum, tempus felis ac, tincidunt massa.
        Maecenas lacus leo, mollis ut scelerisque vitae, ultricies vitae velit.
        Donec fermentum ullamcorper dui, ut feugiat erat ultricies in.</p>
-  <a href="/category/{{$category}}/" class="text-warning">Назад</a>     
+  <a href="{{route('news')}}/category/{{$category}}" class="text-warning">Назад</a>
 @endsection
