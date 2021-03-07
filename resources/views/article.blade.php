@@ -5,14 +5,11 @@
 @endsection
 
 @section('content')
-  <h1 class="text-primary text-center">{{$article}}</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus a urna id eleifend.
-     Integer molestie, arcu a lobortis malesuada, arcu risus dapibus tellus,
-     nec interdum nulla augue id neque. Donec nec mattis tellus, sed facilisis tellus.
-      Nunc a quam tincidunt, porttitor libero id, pharetra lorem.
-      Praesent feugiat eu elit sed aliquam. Fusce nec vulputate elit.
-      Sed nec dui rutrum, tempus felis ac, tincidunt massa.
-       Maecenas lacus leo, mollis ut scelerisque vitae, ultricies vitae velit.
-       Donec fermentum ullamcorper dui, ut feugiat erat ultricies in.</p>
-  <a href="{{route('news')}}/category/{{$category}}" class="text-warning">Назад</a>
+  <h1 class="text-primary text-center">{{$article->title}}</h1>
+  <h3 class="text-info">Автор:{{$article->name}}</h3>
+  <p>{{$article->content}}</p>
+  <p class="text-dark">Дата публикации:{{$article->created_at}}</p>
+  <h3 class="text-info">Источник:{{$article->source}}</h3>
+  <a href="#" class="text-warning">Назад</a></br>
+  <a href="#" class="text-warning">На Главную</a>
 @endsection

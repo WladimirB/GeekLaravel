@@ -13,6 +13,7 @@ services:
         environment:
             WWWUSER: '${WWWUSER}'
             LARAVEL_SAIL: 1
+            #DB_UPSTREAM: http://${DOCKER_GATEWAY_HOST:-host.docker.internal}:3000
         volumes:
             - '.:/var/www/html'
         networks:

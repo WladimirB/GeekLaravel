@@ -3,27 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
-      private $news = [
-      "Actual"=> ["PHP","Stable"],
-      "Latest"=> ["WorldNews","TV","Science"],
-      "Ad"=>["Missing Dog"],
-      "Interesting"=>["PHP Stable Version","Php Latest Version","About Laravel"]
-    ];
-
-    public function index(string $category){
-      return view('category',[
-        'category' => $category,
-        'route'=> route('category',['item'=>$category]),
-        'news' => $this->news[$category]]);
+    public function index()
+    {
+      $categories = DB::table('categories')->get();
+      return view('categories',['categories' => $categories]);
     }
 
-    public function show(string $category ,string $item){
-      return view('article',[
-        'article' => $item,
-        'category'=> $category]);
+    public function show($category_id)
+    {
+      //$news_to_category = DB::table('news')->where('category_id',$category_id)->get();
+
+      dd($category_id);
     }
 
 }

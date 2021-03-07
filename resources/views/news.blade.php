@@ -1,19 +1,22 @@
 @extends('layouts.app')
 
 @section('title-string')
-  Разделы новостей
+  Новости
 @endsection
 
 @section('content')
-  <h1 class="text-primary text-center">Новости по категориям</h1>
+  <h1 class="text-primary text-center">{{$category}}</h1>
   <ul class="list-group">
-    @foreach ($items as $item)
+    @foreach ($news as $article)
       <li class="list-group-item bg-dark text-center border border-0">
-        <a class="h4"href="{{route('news')}}/category/{{$item}}">{{$item}}</a>
+        <a class="h4" href="/category/news/{{$article->id}}">{{$article->title}}</a>
       </li>
     @endforeach
     <li class="list-group-item bg-dark text-center border border-0">
-      <a class="h4 text-light" href="{{route('download')}}">Загрузить новость</a>
+      <a class="text-success h3" href="{{route('add')}}">Добавить новость</a>
+    </li>
+    <li class="list-group-item bg-dark text-center border border-0">
+      <a class="text-warning" href="#">Назад</a>
     </li>
   </ul>
 @endsection

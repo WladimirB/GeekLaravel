@@ -16,7 +16,7 @@
               Main
             </a>
           <li class="nav-item ">
-            <a class="nav-link" href="{{route('news')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link" href="{{route('category')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               News
             </a>
           </li>

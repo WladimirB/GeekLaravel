@@ -7,7 +7,7 @@
 @section('content')
 @if(is_array($req))
   @foreach($req as $key => $value)
-    <p>{{$key}}:{{$value}}</p>
+  <p>{{$key}}:{{$value}}</p>
   @endforeach
 @elseif(is_string($req))
   <p>{{$req}}<p>

@@ -15,14 +15,9 @@ class DownloadNewsController extends Controller
     public function submit(DownloadRequest $request){
       $date =$this->getDate();
       $data = $request->except('_token','submit');
-      $data['date publish'] =$date;
+      $data['date publish'] =date("Y-m-d H:i");
       $this->formatAndSave($data);
       return view('output',['req' => $data]);
-    }
-
-    private function getDate(){
-      date_default_timezone_set('Europe/Moscow');
-      return date("Y-m-d H:i");
     }
 
     private function formatAndSave(array $data){
