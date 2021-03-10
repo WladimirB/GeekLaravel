@@ -9,7 +9,7 @@
 </head>
 <body>
   <header class="bg-dark">
-  <nav class="navbar navbar-lg navbar-expand-lg navbar-transparant navbar-dark navbar-absolute w-100">
+  <nav class="navbar navbar-lg navbar-expand-lg navbar-transparant navbar-dark navbar-absolute w-100"
       <div class="container">
         <a class="navbar-brand" href="/">MyLaravelSite</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,9 +31,8 @@
   </header>
   <div class="container-fluid">
     <div class="row">
-      <aside class="col-3">
-        <navbar class="navbar justify-content-center custom-sidebar">
-          <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
+      <aside class="col-3 custom-sidebar">
+          <ul class="navbar-nav sidebar sidebar-dark accordion mx-auto" id="accordionSidebar">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
@@ -52,15 +51,41 @@
                 Управление
             </div>
             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-bars"></i>
+                    <span>Категории</span>
+                </a>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Components:</h6>
+                        <a class="collapse-item" href="{{route('categories-admin')}}">Все категории</a>
+                        <a class="collapse-item" href="{{route('create-category')}}">Добавить категорию</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-fw fa-window-restore"></i>
                     <span>Статьи</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="#">Все статьи</a>
-                        <a class="collapse-item" href="{{route('download')}}">Добавить статью</a>
+                        <a class="collapse-item" href="{{route('news-admin')}}">Все статьи</a>
+                        <a class="collapse-item" href="{{route('admin.create')}}">Добавить статью</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-hockey-puck"></i>
+                    <span>Источники новостей</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Components:</h6>
+                        <a class="collapse-item" href="{{route('sourceofnews-admin')}}">Все источники новостей</a>
+                        <a class="collapse-item" href="{{route('create-sourcesofnews')}}">Добавить</br>истоник новостей</a>
                     </div>
                 </div>
             </li>
@@ -108,7 +133,6 @@
                 </div>
             </li>
         </ul>
-        </navbar>
       </aside>
       <div class="col-9">
         <div class="container p-5">
@@ -133,6 +157,7 @@
     </div>
   </div>
     </footer>
+    @stack('scripts')
     <script src="/js/app.js"></script>
 </body>
 </html>

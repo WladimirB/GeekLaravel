@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  <h1 class="text-primary text-center">Новости по категориям</h1>
+  <h2 class="text-primary text-center">Новости по категориям</h1>
   <ul class="list-group">
     @foreach ($categories as $value)
       <li class="list-group-item bg-dark text-center border border-0">
