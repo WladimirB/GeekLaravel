@@ -24,7 +24,7 @@
      <div class="form-group">
        <label for="content">Содержание статьи</label>
        <textarea name="content" id="content" cols="30" rows="3" class="form-control"
-        placeholder="enter content">{{old('info')}}</textarea>
+        placeholder="enter content">{{old('content')}}</textarea>
      </div>
      <button class="btn btn-success" name="submit"
         value="login-button">Редактировать</button>

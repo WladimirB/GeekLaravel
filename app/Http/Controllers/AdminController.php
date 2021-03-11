@@ -7,6 +7,9 @@ use App\Models\News;
 Use App\Models\Category;
 use App\Models\SourceOfNews;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\EditNewsArticleRequest;
+use App\Http\Requests\CreateSourceRequest;
+use App\Http\Requests\CreateCategoryRequest;
 
 class AdminController extends Controller
 {
@@ -89,7 +92,7 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditNewsArticleRequest $request, $id)
     {
         $updated = News::find($id);
         $updated->title = $request->title;
@@ -144,7 +147,7 @@ class AdminController extends Controller
       return view('admin.create_sourceofnews');
     }
 
-    public function addCategory(Request $request)
+    public function addCategory(CreateCategoryRequest $request)
     {
       $category = new Category;
       $category->category = $request->category;
@@ -164,7 +167,7 @@ class AdminController extends Controller
       }
     }
 
-    public function addSource(Request $request)
+    public function addSource(CreateSourceRequest $request)
     {
       $source = new SourceOfNews;
       $source->source = $request->sourceofnews;
