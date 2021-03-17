@@ -24,12 +24,26 @@
             <a class="nav-link" href="{{route('about')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               About
             </a>
+          </li>
           <li class="nav-item ">
-            <a class="nav-link" href="{{route('login-form')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link" href="{{route('login')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                Login
             </a>
           </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{route('register')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Register
+            </a>
           </li>
+          <li class="nav-item ">
+            <a href="/logout"
+            onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();" class="nav-link">
+              Logout
+            </a>
+          <form id="logout-form" action="/logout" method="POST" class="d-none">
+            @csrf
+          </form>
           <li class="nav-item ">
             <a class="nav-link" href="{{route('contacts')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Contacts

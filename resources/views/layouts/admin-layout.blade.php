@@ -9,7 +9,7 @@
 </head>
 <body>
   <header class="bg-dark">
-  <nav class="navbar navbar-lg navbar-expand-lg navbar-transparant navbar-dark navbar-absolute w-100"
+  <nav class="navbar navbar-lg navbar-expand-lg navbar-transparant navbar-dark navbar-absolute w-100">
       <div class="container">
         <a class="navbar-brand" href="/">MyLaravelSite</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,13 +17,26 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <span class="nav-link text-success">
+              <i class="fas fa-fw fa-id-badge"></i>
+                @auth
+                   {{Auth::user()->name}}
+                @endauth
+              </span>
+            </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">AdminPanel</a>
+              <a class="nav-link" href="#">Админ-панель</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Exit
+              <a href="/logout"
+              onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();" class="nav-link">
+                Выход
               </a>
+            <form id="logout-form" action="/logout" method="POST" class="d-none">
+              @csrf
+            </form>
           </ul>
         </div>
       </div>
@@ -86,6 +99,18 @@
                         <h6 class="collapse-header">Custom Components:</h6>
                         <a class="collapse-item" href="{{route('sourceofnews-admin')}}">Все источники новостей</a>
                         <a class="collapse-item" href="{{route('create-sourcesofnews')}}">Добавить</br>истоник новостей</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-user-check"></i>
+                    <span>Пользователи</span>
+                </a>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Components:</h6>
+                        <a class="collapse-item" href="{{route('showusers-admin')}}">Просмотр всех пользователей</a>
                     </div>
                 </div>
             </li>

@@ -11,7 +11,9 @@
   @endforeach
 @elseif(is_string($req))
   <p>{{$req}}<p>
+elseif(is_int($req))
+  <p>{{$req}}<p>
 @else
-  <h1>Something Wrong</h1>
+  <h1>@dump($req)</h1>
 @endif
 @endsection

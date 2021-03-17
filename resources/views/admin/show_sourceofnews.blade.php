@@ -43,7 +43,7 @@
            <li class="nav-item">
              <a href="#" data-id="{{$item->id}}" data-safe ="{{csrf_token()}}"
              class="nav-link btn btn-danger btn-sm ml-1"
-             onclick="deleteItem('admin/sourceofnews/')">Удалить</a></li>
+             onclick="deleteItem('sourceofnews/')">Удалить</a></li>
          </ul>
         </td>
       </tr>

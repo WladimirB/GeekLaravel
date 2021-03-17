@@ -6,23 +6,3 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
-// fontawesome
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/regular";
-@import "~@fortawesome/fontawesome-free/scss/solid";
-@import "~@fortawesome/fontawesome-free/scss/brands";
-
-@import 'sb-admin-2';
-
-.custom-bg{
-  background-color: rgba(255,233,196);
-}
-.custom-sidebar{
-  background-color: rgba(87,87,87,0.6);
-}
-
-.main-admin{
-  background-image: url('/images/table.png');
-  background-size: auto;
-}

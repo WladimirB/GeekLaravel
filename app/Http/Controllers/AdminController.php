@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\News;
 Use App\Models\Category;
+Use App\Models\User;
 use App\Models\SourceOfNews;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\EditNewsArticleRequest;
 use App\Http\Requests\CreateSourceRequest;
 use App\Http\Requests\CreateCategoryRequest;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminController extends Controller
 {
@@ -188,6 +191,23 @@ class AdminController extends Controller
         return response('Ok', 200)
                   ->header('Content-Type', 'text/plain');
       }
+    }
+
+    public function showUsers()
+    {
+      $users = Auth::user() -> getUsersExcept();
+      return view('admin.show_users', ['users' => $users]);
+    }
+
+    public function makeAdmin($id)
+    {
+      $user = User::find($id);
+      $user->is_admin = 1;
+      $result=$user->save;
+      if ($result) {
+        return redirect()->route('showusers-admin')
+                         ->with('success','Изменены права пользователя'.$id);
+      }      
     }
 
 }
