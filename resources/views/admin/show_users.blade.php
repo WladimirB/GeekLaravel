@@ -32,12 +32,13 @@
         <td>
           <ul class="nav mx-auto">
            <li class="nav-item">
-             <a href="{{route('make-admin',['id' => $user->id])}}"
+             <a href="{{route('make-admin',['id'=>$user->id])}}"
+             class="nav-link btn btn-info"
              onclick="event.preventDefault();
-                     document.getElementById('makeAdmin-form').submit();" class="nav-link">
-               Сделать админом
+                     document.getElementById(`grant-form{{$user->id}}`).submit();" class="nav-link">
+               Назначить админом
              </a>
-           <form id="makeAdmin-form" action="{{route('make-admin',['id' => $user->id])}}" method="POST" class="d-none">
+           <form id="grant-form{{$user->id}}" action="{{route('make-admin',['id'=>$user->id])}}" method="POST" c-aass="d-none">
              @csrf
            </form>
            </li>

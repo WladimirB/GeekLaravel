@@ -41,6 +41,7 @@ Route::get('/category/news/articles/{category_id}',
 
 Route::group(
   [
+    'prefix' => 'controls',
     'middleware' => ['auth', 'is.admin']
   ],
   function () {

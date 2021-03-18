@@ -27,8 +27,12 @@
              <a href="#" data-id="{{$category->id}}"
                class="nav-link text-warning btn btn-info btn-sm">Изменить</a>
            </li>
-           <li class="nav-item"><a href="#" data-id="{{$category->id}}" data-safe ="{{csrf_token()}}"
-             class="nav-link btn btn-danger btn-sm ml-1"  onclick="deleteItem('categories/')">Удалить</a></li>
+           <li class="nav-item">
+             <a href="#" data-id="{{$category->id}}" data-safe ="{{csrf_token()}}"
+             class="nav-link btn btn-danger btn-sm ml-1"
+             onclick="deleteItem(`{{route('delete-category',['id' => $category->id])}}`)">
+             Удалить</a>
+           </li>
          </ul>
         </td>
       </tr>

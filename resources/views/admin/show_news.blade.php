@@ -37,11 +37,12 @@
                class="nav-link text-warning btn btn-info btn-sm">Изменить</a>
            </li>
            <li class="nav-item">
-             <a href="/admin/{{$news->id}}"
+             <a href="{{route('admin.show',['admin' => $news->id])}}"
                class="nav-link text-warning btn btn-primary btn-sm">Подробнее</a>
            </li>
            <li class="nav-item"><a href="#" data-id="{{$news->id}}" data-safe ="{{csrf_token()}}"
-             class="nav-link btn btn-danger btn-sm ml-1"  onclick="deleteItem('admin/')">Удалить</a></li>
+             class="nav-link btn btn-danger btn-sm ml-1"
+             onclick="deleteItem(`{{route('admin.destroy',['admin' => $news->id])}}`)">Удалить</a></li>
          </ul>
         </td>
       </tr>

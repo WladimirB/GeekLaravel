@@ -199,15 +199,15 @@ class AdminController extends Controller
       return view('admin.show_users', ['users' => $users]);
     }
 
-    public function makeAdmin($id)
+    public function makeAdmin(Request $request,$id)
     {
       $user = User::find($id);
       $user->is_admin = 1;
-      $result=$user->save;
+      $result=$user->save();
       if ($result) {
         return redirect()->route('showusers-admin')
                          ->with('success','Изменены права пользователя'.$id);
-      }      
+      }
     }
 
 }
