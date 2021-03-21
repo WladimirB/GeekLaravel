@@ -12,6 +12,10 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ParserController;
+use App\Http\Controllers\SocialiteController;
+use App\Http\Controllers\ProfileController;
+
 
 
 Route::group(['prefix' => ''],function(){
@@ -69,6 +73,8 @@ Route::group(
 
     Route::get('/users', [AdminController::class, 'showUsers'])->name('showusers-admin');
     Route::post('/users/{id}',[AdminController::class, 'makeAdmin'])->name('make-admin');
+
+    Route::get('/parser',[ParserController::class, 'index'])->name('admin.parser');
   }
 );
 
@@ -80,6 +86,9 @@ Route::post('/register', [RegisterController::class, 'register']);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-//Auth::routes();
+Route::get('/account', ProfileController::class)->name('profile');
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => 'guest'], function () {
+Route::get('/auth/vk',[SocialiteController::class, 'init'])->name('society.init');
+Route::get('/auth/vk/callback',[SocialiteController::class, 'callback'])->name('society.callback');
+});

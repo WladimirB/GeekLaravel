@@ -7,12 +7,13 @@
     @if(session()->has('success'))
        <div class="alert alert-success">{{session()->get('success')}}</div>
     @endif
-    <h1 class="text-primary text-center">{{$article->title}}</h1>
-    <h3 class="text-info">Автор:{{$article->name}}</h3>
+    <h1 class="text-center">{{$article->title}}</h1>
+    <h3 class="text-muted">Категория:<span class="text-info">{{$article->category()}}</span></h3>
+    <h3 class="text-muted">Автор:<span class="text-info">{{$article->autor()}}</span></h3>
     <p>{{$article->content}}</p>
     <p class="text-dark">Дата публикации:{{$article->created_at}}</p>
     <p class="text-dark">Отредактировано:{{$article->updated_at}}</p>
-    <h3 class="text-info">Источник:{{$article->source}}</h3>
+    <h3 class="text-muted">Источник:<span class="text-info">{{$article->source()}}</span></h3>
     <a href="{{route('news-admin')}}" class="text-warning">Назад</a></br>
     <a href="#" class="text-warning">На Главную</a>
   </div>

@@ -69,12 +69,8 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-      $post =DB::table('news')
-             ->leftJoin('users','news.autor_id','=','users.id')
-             ->leftJoin('source_of_news', 'news.source_id', '=', 'source_of_news.id')
-             ->where('news.id','=',$id)
-             ->get();
-      return view('admin.show_news_article', ['article' => $post[0]]);
+      $post=News::findOrFail($id);
+      return view('admin.show_news_article', ['article' => $post]);
     }
 
     /**
